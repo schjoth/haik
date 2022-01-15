@@ -5,6 +5,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import Login from "./components/login/Login";
 import RegisterUser from "./components/registerUser/RegisterUser";
 import { auth } from "./firebase-config";
+import UserInformation from "./components/userInformation/userInformation";
 
 function App() {
   const [user, setUser] = useState<User | null>(null);
@@ -17,7 +18,10 @@ function App() {
   return (
     <div className="App">
       {user ? (
-        <div>{user.email}</div>
+        <div>
+          {user.email}
+          <UserInformation />
+        </div>
       ) : (
         <div>
           <RegisterUser />
