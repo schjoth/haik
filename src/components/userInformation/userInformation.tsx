@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { auth } from "../../firebase-config";
-import { createOrUpdateUserInformation } from "../../firebaseUtils/userUtils";
+import {
+  createOrUpdateUserInformation,
+  getCurrentUserInformation,
+} from "../../firebaseUtils/userUtils";
 
 const UserInformation = () => {
   const [username, setUsername] = useState<string>(
@@ -16,7 +19,6 @@ const UserInformation = () => {
     setBirthday(new Date(event.target.value));
   };
   const finished = async () => {
-    console.log("Cha");
     await createOrUpdateUserInformation(username, birthday);
   };
 
