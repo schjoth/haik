@@ -6,6 +6,7 @@ import Login from "./components/login/Login";
 import RegisterUser from "./components/registerUser/RegisterUser";
 import { auth } from "./firebase-config";
 import UserInformation from "./components/userInformation/userInformation";
+import NewTrip from "./components/newTrip/newTrip";
 
 function App() {
   const [user, setUser] = useState<User | null>(null);
@@ -21,6 +22,7 @@ function App() {
         <div>
           {user.email}
           <UserInformation />
+          <NewTrip />
         </div>
       ) : (
         <div>

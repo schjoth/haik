@@ -10,5 +10,5 @@ export type TripType = {
     price: number;
     driver: string;
     passenger: string;
-    review: ReviewType;
+    review: ReviewType | null;
 }
